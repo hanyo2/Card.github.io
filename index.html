@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Card</title>
+  <!-- Google Font-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="outside">
+      <div class="front">
+        <p>Happy Birthday Mummy!!</p>
+        <div class="cake">
+          <div class="top-layer"></div>
+          <div class="middle-layer"></div>
+          <div class="bottom-layer"></div>
+          <div class="candle"></div>
+        </div>
+      </div>
+      <div class="back"></div>
+    </div>
+    <div class="inside">
+      <img src="Collage.jpg" alt="Your Image" class="custom-image" />
+    </div>
+    <div class="insideText">
+      <p>More than a mother, you are a friend, confidant, supporter and protector.. and most clearly a patient  Popo and mummy. To still love us fiercely despite the high fire energy that goes on in our home is a great testament to your mothers heart. Happy Birthday Ma! We love you so much ❤❤❤ Love Shu-Wen</p>
+      <p>Dear mummy, now that I'm a mum, I'm constantly looking back at my childhood and remembering all the wonderful and energy draining ways you have loved, cared and looked out for me from my childhood till today. You set a very high standard for what I'd like to be as a mother and I hope Hannah will love and cherish me one day as much as I do you. Happy 63rd birthday! May God bless you with many many many more. Love May-Wen</p>
+      <p>Hi Ma, Happy 63rd birthday! Thank you for raising all of us with so much love and care, and continuing to show your deication for us so much even after we've grown. I hope you have a wonderful birthday, and enjoy reading this card as much as I enjoyed making it! Love Han-Jien</p>
+    </div>
+    <audio id="birthdaySound">
+      <source src="song.mp3" type="audio/mpeg">
+      <!-- You can include multiple <source> elements for different audio formats -->
+    </audio>
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#card").on("click", function() {
+        // Toggle the card class
+        $(this).toggleClass("opened");
+    
+        // Play the birthday sound
+        var birthdaySound = document.getElementById("birthdaySound");
+        birthdaySound.play();
+    
+        // Add a delay before showing the insideText
+        setTimeout(function() {
+          $(".insideText").toggleClass("active");
+        }, 2000);
+      });
+    });
+    </script>
+</body>
+</html>
