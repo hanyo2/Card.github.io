@@ -43,8 +43,10 @@
         $(this).toggleClass("opened");
     
         // Play the birthday sound
-        var birthdaySound = document.getElementById("birthdaySound");
-        birthdaySound.play();
+        $(document).one('click', function() {
+      var birthdaySound = document.getElementById("birthdaySound");
+      birthdaySound.play();
+      });
     
         // Add a delay before showing the insideText
         setTimeout(function() {
